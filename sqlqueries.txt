@@ -24,5 +24,3 @@ Where home_team=’RCB’
 
 Select team_lost from fixtures
 Where venue='Kolkata' 
-
-Milestone6 pending
