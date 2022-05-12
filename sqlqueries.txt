@@ -1,3 +1,8 @@
+insert into points 
+select 
+from teamdetails, fixtures 
+group by teamdetails.team_name , fixtures.team_won, fixtures.team_lost
+select * from points
 Create table teamdetails ( slno int, team_name char(20) primary key, captain char(20), owner char(20), home_ground char(25))
 
 Create table fixtures(match_number int primary key, home_team char(20), away_team char(20), venue char(25), team_won char(20), team_lost char(20))
