@@ -1,0 +1,26 @@
+Create table teamdetails ( slno int, team_name char(20) primary key, captain char(20), owner char(20), home_ground char(25))
+
+Create table fixtures(match_number int primary key, home_team char(20), away_team char(20), venue char(25), team_won char(20), team_lost char(20))
+
+Create table points(team_name char(20), foreign key(team_name) references teamdetails(team_name), no_win int, no_loss int, points_scored int)
+
+copy teamdetails(slno, team_name, captain, owner, home_ground)
+from 'C:\Users\shwetht\Desktop\team-details (2).csv'
+delimiter ','
+csv header
+
+select * from teamdetails
+
+
+Select count(team_name)
+From teamdetails
+copy fixtures(match_number,home_team,away_team,venue,team_won,team_lost)
+from 'C:\Users\shwetht\Desktop\Fixtures.csv'
+delimiter ','
+csv header
+
+Select * from fixtures
+Where home_team=’RCB’
+
+Select team_lost from fixtures
+Where venue='Kolkata' 
